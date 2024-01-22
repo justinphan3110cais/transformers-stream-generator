@@ -13,7 +13,7 @@ import numpy as np
 import random
 import warnings
 import inspect
-from transformers.generation.utils import GenerateOutput, SampleOutput, logger
+from transformers.generation.utils import GenerateOutput, logger
 import torch
 from typing import Callable, List, Optional, Union
 from torch import nn
@@ -732,7 +732,7 @@ class NewGenerationMixin(GenerationMixin):
         return_dict_in_generate: Optional[bool] = None,
         synced_gpus: Optional[bool] = False,
         **model_kwargs,
-    ) -> Union[SampleOutput, torch.LongTensor]:
+    ):
         r"""
         Generates sequences of token ids for models with a language modeling head using **multinomial sampling** and
         can be used for text-decoder, text-to-text, speech-to-text, and vision-to-text models.
